@@ -2,6 +2,8 @@ apply {
     plugin 'java'
     plugin 'org.springframework.boot'
     plugin 'io.spring.dependency-management'
+
+    plugin 'java-library'
 }
 
 repositories {
@@ -17,5 +19,5 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
     // https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp
-    implementation 'com.squareup.okhttp3:okhttp:4.9.1'
+    api 'com.squareup.okhttp3:okhttp:4.9.1'
 }
