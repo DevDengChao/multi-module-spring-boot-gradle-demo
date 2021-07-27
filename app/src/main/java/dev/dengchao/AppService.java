@@ -1,5 +1,6 @@
 package dev.dengchao;
 
+import okhttp3.OkHttpClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.lang.NonNull;
@@ -11,10 +12,14 @@ public class AppService {
 
     @NonNull
     private final LibComponent component;
+    @NonNull
+    private final OkHttpClient okHttpClient;
 
-    public AppService(@NonNull LibComponent component) {
+    public AppService(@NonNull LibComponent component, @NonNull OkHttpClient okHttpClient) {
         this.component = component;
+        this.okHttpClient = okHttpClient;
         log.info("Component injected {}", component);
+        log.info("3rd party library injected {}", okHttpClient);
     }
 
     @NonNull
@@ -22,5 +27,10 @@ public class AppService {
         String res = component.hello(name);
         log.info("{}", res);
         return res;
+    }
+
+    @NonNull
+    public OkHttpClient getOkHttpClient() {
+        return okHttpClient;
     }
 }

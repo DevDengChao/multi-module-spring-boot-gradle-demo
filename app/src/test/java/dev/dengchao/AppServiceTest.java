@@ -18,5 +18,7 @@ class AppServiceTest {
         assertNotNull(service);
 
         assertEquals("Hello World", service.hello("World"));
+
+        assertNotNull(service.getOkHttpClient());
     }
 }
