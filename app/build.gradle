@@ -1,0 +1,18 @@
+apply {
+    plugin 'java'
+    plugin 'org.springframework.boot'
+    plugin 'io.spring.dependency-management'
+}
+
+repositories {
+    mavenCentral()
+}
+
+test {
+    useJUnitPlatform()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
